@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1.Entities
+﻿using System.Globalization;
+
+namespace ConsoleApp1.Entities
 {
     internal class Installment
     {
@@ -9,6 +11,11 @@
         {
             DueDate = dueDate;
             Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return DueDate.ToString("dd/M/yyyy") + " - " + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
